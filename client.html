@@ -1,9 +1,13 @@
+<!DOCTYPE html>
 <html>
-<body>
-<h1>文件传输test</h1>
-<p>123</p>
-<form action="http://localhost:3000/" method="post" enctype="multipart/form-data"></form>
-<input multiple type="file" name="a"></input>
-<input type="submit" value="提交"></input>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>测试上传</title>
+  </head>
+  <body>
+    <form action="http://localhost:3000/upload" method="post" enctype="multipart/form-data">
+      文件：<input type="file" name="f1" multiple>
+      <input type="submit" value="上传">
+    </form>
+  </body>
 </html>

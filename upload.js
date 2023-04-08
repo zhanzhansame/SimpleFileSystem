@@ -25,7 +25,7 @@ const server = http.createServer((req, res) => {
       if (err) {
         responseEnd(err)
       }
-      const file = files.f1
+      const file = files.file
       //console.log(file)
       saveFile(file)
     })

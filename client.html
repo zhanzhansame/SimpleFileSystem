@@ -6,8 +6,31 @@
   </head>
   <body>
     <form action="http://localhost:3000/upload" method="post" enctype="multipart/form-data">
-      文件：<input type="file" name="f1" multiple>
-      <input type="submit" value="上传">
+      文件：<input type="file" name="file" multiple>
+      <input type="submit" value="上传" id="Mysubmit">
     </form>
   </body>
+  <script>
+    document.getElementById("Mysubmit").onclick = function(event){
+      if(event.preventDefault) event.preventDefault();
+      else event.returnValue = false;
+      var formDOM = document.getElementsByTagName("form")[0];
+      var formData = new FormData(formDOM);
+      var req = new XMLHttpRequest();
+      req.open("POST", "http://localhost:3000/upload");
+      req.onload = function(){
+        if(this.status === 200){
+            //成功入口,刷新？还是展示
+            /*
+            var space = document.createElement("text");
+            space.src = JSON.parse(this.responseText).path;
+            formTODO
+            */
+        }   
+      }   
+    req.send(formData);
+　　   req = null;
+  }
+  </script>
 </html>
+
